@@ -1,7 +1,6 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { personas } from "@/lib/personas"
 import { useChatContext } from "@/contexts/ChatContext"
 
@@ -12,9 +11,7 @@ export function PersonaSelector() {
     dispatch({ type: "SET_PERSONA", payload: personaId })
   }
 
-   const clearConversation = () => {
-    dispatch({ type: "CLEAR_CONVERSATION", payload: state.selectedPersona })
-  }
+  
 
   return (
     <div className="w-full">

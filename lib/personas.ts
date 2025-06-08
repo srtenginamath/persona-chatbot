@@ -27,6 +27,6 @@ export const personas: Persona[] = [
 
 ]
 
-export const getPersonaById = (id: string): Persona | any => {
+export const getPersonaById = (id: string): Persona | undefined => {
   return personas.find((persona) => persona.id === id)
 }

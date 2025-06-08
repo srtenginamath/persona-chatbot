@@ -1,7 +1,7 @@
 "use client"
 
 import type React from "react"
-import { useState, useRef, useEffect } from "react"
+import {  useRef, useEffect } from "react"
 import { useChat } from "ai/react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Send, Loader2, User } from "lucide-react"
@@ -53,18 +53,9 @@ export default function ChatInterface() {
     }
   }
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault()
-      if (input.trim() && !isLoading) {
-        handleSubmit(e as any)
-      }
-    }
-  }
+ 
 
-   const clearConversation = () => {
-    dispatch({ type: "CLEAR_CONVERSATION", payload: state.selectedPersona })
-  }
+ 
 
   if (!selectedPersona) {
     return (
@@ -216,7 +207,6 @@ export default function ChatInterface() {
             <Textarea
               value={input}
               onChange={handleInputChange}
-              onKeyDown={handleKeyDown}
               placeholder={`Message ${selectedPersona.name}...`}
               className="resize-none border-2 rounded-xl pr-12 min-h-[44px] max-h-32"
               rows={1}
